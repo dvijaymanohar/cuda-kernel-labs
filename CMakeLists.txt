@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(cuda_kernel_labs LANGUAGES CXX CUDA)
+set(CMAKE_CUDA_STANDARD 17)
+add_executable(vector_add examples/vector_add.cu)
+add_executable(reduction examples/reduction.cu)
+enable_testing()
+add_test(NAME vector_add_small COMMAND vector_add 10007)
+add_test(NAME reduction_small COMMAND reduction 10007)
